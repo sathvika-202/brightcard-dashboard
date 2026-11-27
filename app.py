@@ -35,9 +35,12 @@ if question:
     data_summary = (df.groupby(["week", "store", "category"])["sales"]
                       .sum().reset_index().to_csv(index=False))
 
-    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    client = OpenAI(
+    api_key=st.secrets["GROQ_API_KEY"],
+    base_url="https://api.groq.com/openai/v1",
+)
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="llama-3.3-70b-versatile",
         max_tokens=500,
         messages=[
             {"role": "system",
