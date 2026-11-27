@@ -40,8 +40,8 @@ if question:
     base_url="https://api.groq.com/openai/v1",
 )
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        max_tokens=500,
+        model="openai/gpt-oss-20b",
+        max_tokens=1500,
         messages=[
             {"role": "system",
              "content": ("You are a sales analyst for BrightCart. Answer ONLY using "
