@@ -46,8 +46,7 @@ if question:
             {"role": "system",
              "content": ("You are a sales analyst for BrightCart. Answer ONLY using "
                          "the data provided. If the answer is not in the data, say "
-                         "you don't have that information. Keep answers short."
-                         "Do not add currency symbols or units that are not in the data.")},
+                         "you don't have that information. Keep answers short.")},
             {"role": "user",
              "content": f"Sales data (CSV):\n{data_summary}\n\nQuestion: {question}"},
         ],
